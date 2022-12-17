@@ -45,7 +45,7 @@ searchBtn.addEventListener("click", (e) => {
 mealDisplay.addEventListener("click", (e) => {
   e.preventDefault();
   if (e.target.classList.contains("recipe_btn")) {
-    let mealItemId = document.querySelector(".meal_item");
+    let mealItemId = e.target.parentElement.parentElement;
 
     fetch(
       `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealItemId.dataset.id}`
